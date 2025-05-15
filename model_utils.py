@@ -4,6 +4,9 @@ import json
 from pydantic import BaseModel, ValidationError
 from typing import Literal
 import os
+from dotenv import load_dotenv 
+
+load_dotenv()
 
 class TumorReport(BaseModel):
     tumor_type: Literal['pituitary', 'glioma', 'meningioma', 'no tumor']
@@ -11,7 +14,7 @@ class TumorReport(BaseModel):
     reason: str
 
 
-API_KEY = ""
+API_KEY = os.getenv("API_KEY")
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 #  # حط التوكن تبعك هون
 # API_URL = "https://api-inference.huggingface.co/models/Qwen/Qwen2.5-VL-3B-Instruct"

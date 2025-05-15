@@ -6,3 +6,4 @@ accelerate
 qwen-vl-utils
 pydantic
 torchvision
+dotenv
